@@ -92,9 +92,10 @@
 
       <!-- learn more page page -->
       <div
-        class="absolute overflow-y-auto h-screen w-full bg-zinc-900 p-4 md:p-8 lg:p-12">
+        class="absolute overflow-y-auto h-screen w-full bg-zinc-900 pt-12 md:pt-16">
         <!-- about -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 md:gap-x-6">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 md:gap-x-6 px-6 lg:px-10">
           <!-- about header text -->
           <div
             class="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8">
@@ -215,38 +216,63 @@
         </div>
 
         <!-- contact -->
-        <div class="mt-[80px] px-4 sm:px-6 lg:px-8 space-y-6">
-          <!-- Contact Form Section -->
-          <div class="flex flex-col justify-center items-center">
+        <div class="my-36 px-4 sm:px-6 lg:px-8 space-y-6">
+          <div class="flex flex-col justify-center items-center space-y-32">
+            <!-- head text -->
             <h2
-              class="text-gray-100 text-2xl md:text-3xl lg:text-4xl font-poppins font-semibold md:font-bold text-center mb-8">
+              class="text-gray-100 text-2xl md:text-3xl lg:text-4xl font-poppins font-semibold md:font-bold text-center">
               Contact
             </h2>
 
-            <!-- Form Inputs -->
-            <div
-              class="flex flex-col justify-center items-center space-y-6 w-full md:max-w-[80%] lg:max-w-[50%] font-roboto">
-              <input
-                type="text"
-                placeholder="Enter your name"
-                class="input-custom-style" />
-              <input
-                type="email"
-                placeholder="Enter your email"
-                class="input-custom-style" />
-              <textarea
-                name="message"
-                id="message"
-                placeholder="Enter your message"
-                rows="4"
-                class="input-custom-style resize-none"></textarea>
-              <button
-                class="bg-transparent w-full text-indigo-500 font-bold py-2 px-4 text-sm sm:text-base md:text-lg lg:text-xl border-2 border-indigo-500 hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
-                Submit
-              </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 p-6">
+              <!-- contact image -->
+              <div
+                class="flex justify-center items-center mx-auto max-w-[40%] md:max-w-[80%]">
+                <img
+                  src="./images/contact form.svg"
+                  alt="Contact Image"
+                  class="w-full" />
+              </div>
+
+              <!-- Form field -->
+              <div
+                class="flex flex-col justify-center items-center space-y-6 md:space-y-10 w-full font-roboto">
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  class="input-custom-style w-full" />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="input-custom-style w-full" />
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Enter your message"
+                  rows="4"
+                  class="input-custom-style resize-none w-full"></textarea>
+                <button
+                  class="bg-transparent w-full text-indigo-500 font-bold py-2 px-4 text-sm sm:text-base md:text-lg lg:text-xl border-2 border-indigo-500 hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- footer -->
+        <footer
+          class="bg-zinc-800 text-gray-200 font-roboto mt-20 py-6 px-4 sm:px-6 lg:px-8">
+          <div
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <address class="mb-4 sm:mb-0 text-sm sm:text-base font-light">
+              West Kafrul, Mollapara, Mukti Housing Road, Dhaka
+            </address>
+            <span class="text-sm sm:text-base font-medium"
+              >&copy; All rights reserved, Nahian.</span
+            >
+          </div>
+        </footer>
       </div>
     </div>
 
