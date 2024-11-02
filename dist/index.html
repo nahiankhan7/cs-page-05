@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Particles CS</title>
-    <!-- font awesome cdn link -->
+    <!-- Font awesome cdn link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
     <link rel="stylesheet" href="./output.css" />
+
+    <style>
+      #learnMorePage {
+        transform: translateY(100%);
+      }
+      #learnMorePage.open {
+        transform: translateY(0);
+      }
+      #learnMorePage {
+        transition: transform 0.5s ease-in-out;
+      }
+    </style>
   </head>
-  <body>
-    <!-- container -->
+  <body class="relative w-full h-screen lg:overflow-hidden">
+    <!-- Particles effect -->
     <div
       id="particles-js"
-      class="relative h-screen w-full bg-center bg-cover bg-no-repeat bg-[url('./images/bg-image01.jpg')] overflow-hidden">
-      <!-- home page -->
-      <div
-        class="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 lg:p-8">
-        <!-- header text -->
+      class="absolute h-screen w-full bg-center bg-cover bg-no-repeat bg-[url('./images/bg-image01.jpg')]">
+      <div class="left-[50%] top-[50%]">
+        <!-- Header text -->
         <div class="text-center mb-4 md:mb-6 lg:mb-8">
           <h1
             class="font-poppins text-gray-100 text-3xl md:text-5xl lg:text-6xl font-extrabold">
@@ -32,7 +42,7 @@
           </p>
         </div>
 
-        <!-- countdown time -->
+        <!-- Countdown timer -->
         <div
           class="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-8 mt-4 md:mt-6 lg:mt-8 text-gray-200 font-roboto">
           <div
@@ -76,207 +86,237 @@
           </div>
         </div>
 
-        <!-- buttons -->
+        <!-- Action buttons -->
         <div
           class="flex justify-center items-center space-x-4 font-roboto mt-4 md:mt-6 lg:mt-8">
           <button
-            class="bg-transparent text-indigo-500 font-bold py-2 px-4 text-base md:text-lg lg:text-xl border-2 border-indigo-500 rounded hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
+            id="openLearMore"
+            class="bg-transparent hidden lg:block text-indigo-500 font-bold py-2 px-4 text-base md:text-lg lg:text-xl border-2 border-indigo-500 rounded hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
             Learn More
           </button>
+          <a
+            href="#learnMorePage"
+            class="bg-transparent cursor-pointer lg:hidden text-indigo-500 font-bold py-2 px-4 text-base md:text-lg lg:text-xl border-2 border-indigo-500 rounded hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
+            Learn More
+          </a>
           <button
             class="bg-transparent text-yellow-500 font-bold py-2 px-4 text-base md:text-lg lg:text-xl border-2 border-yellow-500 rounded hover:text-white hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition duration-300 ease-in-out">
             Notify Me
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- learn more page page -->
+    <!-- Learn more section -->
+    <div id="learnMorePage" class="absolute bg-zinc-900">
+      <!-- Learn more close button -->
+      <button
+        id="closeButton"
+        class="absolute top-4 hidden lg:block right-4 focus:outline-none">
+        <i
+          class="fa-solid fa-xmark text-3xl cursor-pointer text-gray-300 hover:text-gray-50 transition duration-200"></i>
+      </button>
+      <!-- About -->
       <div
-        class="absolute overflow-y-auto h-screen w-full bg-zinc-900 pt-12 md:pt-16">
-        <!-- about -->
+        class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 md:gap-x-6 px-6 lg:px-10 pt-12 md:pt-16">
+        <!-- About header text -->
         <div
-          class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 md:gap-x-6 px-6 lg:px-10">
-          <!-- about header text -->
+          class="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8">
+          <h2
+            class="text-gray-100 text-xl xs:text-2xl md:text-3xl lg:text-4xl font-poppins font-semibold md:font-bold">
+            About Us
+          </h2>
+          <p class="text-gray-200 text-base md:text-lg lg:text-xl font-roboto">
+            Welcome to our new website!<br />
+            We're excited to share our latest project with you.<br />
+            Thanks for your support—stay tuned for more!
+          </p>
           <div
-            class="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8">
-            <h2
-              class="text-gray-100 text-xl xs:text-2xl md:text-3xl lg:text-4xl font-poppins font-semibold md:font-bold">
-              About Us
-            </h2>
-            <p
-              class="text-gray-200 text-base md:text-lg lg:text-xl font-roboto">
-              Welcome to our new website!<br />
-              We're excited to share our latest project with you.<br />
-              Thanks for your support—stay tuned for more!
-            </p>
-            <div
-              class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 py-4">
-              <a
-                href="#"
-                class="text-gray-300 hover:text-blue-600 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-pink-500 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-green-500 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-gray-600 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
-                <i class="fa-regular fa-envelope"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- image -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <div
-              class="group relative items-center justify-center overflow-hidden">
-              <div class="">
-                <img
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src="./images/education.jpg"
-                  alt="education" />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-              <div
-                class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
-                <h1 class="text-3xl uppercase font-bold text-white font-roboto">
-                  Education
-                </h1>
-              </div>
-            </div>
-
-            <div
-              class="group relative items-center justify-center overflow-hidden">
-              <div class="">
-                <img
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src="./images/city.jpg"
-                  alt="city" />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-              <div
-                class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
-                <h1 class="text-3xl uppercase font-bold text-white font-roboto">
-                  City
-                </h1>
-              </div>
-            </div>
-
-            <div
-              class="group relative items-center justify-center overflow-hidden">
-              <div class="">
-                <img
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src="./images/food.jpg"
-                  alt="food" />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-              <div
-                class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
-                <h1 class="text-3xl uppercase font-bold text-white font-roboto">
-                  Food
-                </h1>
-              </div>
-            </div>
-
-            <div
-              class="group relative items-center justify-center overflow-hidden">
-              <div class="">
-                <img
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src="./images/adventure.jpg"
-                  alt="adventure" />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-              <div
-                class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
-                <h1 class="text-3xl uppercase font-bold text-white font-roboto">
-                  Adventure
-                </h1>
-              </div>
-            </div>
+            class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 py-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-blue-600 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-pink-500 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-green-500 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-gray-600 transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
           </div>
         </div>
 
-        <!-- contact -->
-        <div class="my-36 px-4 sm:px-6 lg:px-8 space-y-6">
-          <div class="flex flex-col justify-center items-center space-y-32">
-            <!-- head text -->
-            <h2
-              class="text-gray-100 text-2xl md:text-3xl lg:text-4xl font-poppins font-semibold md:font-bold text-center">
-              Contact
-            </h2>
+        <!-- image -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div
+            class="group relative items-center justify-center overflow-hidden">
+            <div class="">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="./images/education.jpg"
+                alt="education" />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+            <div
+              class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+              <h1 class="text-3xl uppercase font-bold text-white font-roboto">
+                Education
+              </h1>
+            </div>
+          </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 p-6">
-              <!-- contact image -->
-              <div
-                class="flex justify-center items-center mx-auto max-w-[40%] md:max-w-[80%]">
-                <img
-                  src="./images/contact form.svg"
-                  alt="Contact Image"
-                  class="w-full" />
-              </div>
+          <div
+            class="group relative items-center justify-center overflow-hidden">
+            <div class="">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="./images/city.jpg"
+                alt="city" />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+            <div
+              class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+              <h1 class="text-3xl uppercase font-bold text-white font-roboto">
+                City
+              </h1>
+            </div>
+          </div>
 
-              <!-- Form field -->
-              <div
-                class="flex flex-col justify-center items-center space-y-6 md:space-y-10 w-full font-roboto">
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  class="input-custom-style w-full" />
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  class="input-custom-style w-full" />
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Enter your message"
-                  rows="4"
-                  class="input-custom-style resize-none w-full"></textarea>
-                <button
-                  class="bg-transparent w-full text-indigo-500 font-bold py-2 px-4 text-sm sm:text-base md:text-lg lg:text-xl border-2 border-indigo-500 hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
-                  Submit
-                </button>
-              </div>
+          <div
+            class="group relative items-center justify-center overflow-hidden">
+            <div class="">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="./images/food.jpg"
+                alt="food" />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+            <div
+              class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+              <h1 class="text-3xl uppercase font-bold text-white font-roboto">
+                Food
+              </h1>
+            </div>
+          </div>
+
+          <div
+            class="group relative items-center justify-center overflow-hidden">
+            <div class="">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="./images/adventure.jpg"
+                alt="adventure" />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+            <div
+              class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+              <h1 class="text-3xl uppercase font-bold text-white font-roboto">
+                Adventure
+              </h1>
             </div>
           </div>
         </div>
-
-        <!-- footer -->
-        <footer
-          class="bg-zinc-800 text-gray-200 font-roboto mt-20 py-6 px-4 sm:px-6 lg:px-8">
-          <div
-            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-            <address class="mb-4 sm:mb-0 text-sm sm:text-base font-light">
-              West Kafrul, Mollapara, Mukti Housing Road, Dhaka
-            </address>
-            <span class="text-sm sm:text-base font-medium"
-              >&copy; All rights reserved, Nahian.</span
-            >
-          </div>
-        </footer>
       </div>
+
+      <!-- Contact -->
+      <div class="my-36 px-4 sm:px-6 lg:px-8 space-y-6">
+        <div class="flex flex-col justify-center items-center space-y-32">
+          <!-- head text -->
+          <h2
+            class="text-gray-100 text-2xl md:text-3xl lg:text-4xl font-poppins font-semibold md:font-bold text-center">
+            Contact
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 p-6">
+            <!-- contact image -->
+            <div
+              class="flex justify-center items-center mx-auto max-w-[40%] md:max-w-[80%]">
+              <img
+                src="./images/contact form.svg"
+                alt="Contact Image"
+                class="w-full" />
+            </div>
+
+            <!-- Form field -->
+            <div
+              class="flex flex-col justify-center items-center space-y-6 md:space-y-10 w-full font-roboto">
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="input-custom-style w-full" />
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="input-custom-style w-full" />
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Enter your message"
+                rows="4"
+                class="input-custom-style resize-none w-full"></textarea>
+              <button
+                class="bg-transparent w-full text-indigo-500 font-bold py-2 px-4 text-sm sm:text-base md:text-lg lg:text-xl border-2 border-indigo-500 hover:text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300 ease-in-out">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="bg-zinc-800 text-gray-200 font-roboto mt-20 py-6 px-4 sm:px-6 lg:px-8">
+        <div
+          class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+          <div
+            class="flex items-center space-x-2 mb-4 sm:mb-0 text-sm sm:text-base font-light">
+            <!-- Icon with better accessibility -->
+            <i
+              class="fa-solid fa-location-arrow"
+              role="img"
+              aria-label="Location icon"></i>
+            <address>West Kafrul, Mollapara, Mukti Housing Road, Dhaka</address>
+          </div>
+
+          <span class="text-sm sm:text-base font-medium">
+            &copy; All rights reserved, Nahian.
+          </span>
+        </div>
+      </footer>
     </div>
 
     <script src="./particles.js"></script>
     <script src="./app.js"></script>
+    <script>
+      const learnMorePage = document.getElementById("learnMorePage");
+      const openLearMore = document.getElementById("openLearMore");
+      const closeLearnMore = document.getElementById("closeButton");
+
+      openLearMore.addEventListener("click", () => {
+        learnMorePage.classList.add("open");
+      });
+      closeLearnMore.addEventListener("click", () => {
+        learnMorePage.classList.remove("open");
+      });
+    </script>
   </body>
 </html>
